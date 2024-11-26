@@ -53,4 +53,21 @@ public class VideoJuego5 {
             System.out.println();
         }
     }
+
+    public static void soldadoMayorVida(Map<String, Soldado> ejercito, String nombreEjercito) {
+        if (ejercito.isEmpty()) {
+            System.out.println("No hay soldados en " + nombreEjercito + ".");
+            return;
+        }
+
+        Soldado soldadoMayor = Collections.max(ejercito.values(), Comparator.comparingInt(Soldado::getNivelVida));
+        System.out.println("Soldado con mayor nivel de vida en " + nombreEjercito + ": " + soldadoMayor.getNombre() +
+                " (Vida: " + soldadoMayor.getNivelVida() + ")");
+    }
+
+    public static void mostrarDatosEjercito(Map<String, Soldado> ejercito, String nombreEjercito, int vidaTotal) {
+        System.out.println("Vida total de " + nombreEjercito + ": " + vidaTotal);
+        System.out.println("Promedio de vida de " + nombreEjercito + ": " + vidaTotal / ejercito.size());
+    }
+
 }
