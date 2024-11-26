@@ -41,4 +41,16 @@ public class VideoJuego5 {
     public static boolean verificar(Soldado[][] tablero, Soldado soldado) {
         return tablero[soldado.getFila()][soldado.getColumna()] != null;
     }
+    public static void mostrar(Soldado[][] tablero) {
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero[i].length; j++) {
+                if (tablero[i][j] == null) {
+                    System.out.print("_________| ");
+                } else {
+                    System.out.print(tablero[i][j].getNombre() + " | ");
+                }
+            }
+            System.out.println();
+        }
+    }
 }
