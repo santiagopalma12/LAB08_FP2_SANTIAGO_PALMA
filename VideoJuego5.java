@@ -1,5 +1,4 @@
 
-
 package sas;
 
 import java.util.*;
@@ -38,5 +37,8 @@ public class VideoJuego5 {
 
         } while (continuar.equalsIgnoreCase("si"));
 
+    }
+    public static boolean verificar(Soldado[][] tablero, Soldado soldado) {
+        return tablero[soldado.getFila()][soldado.getColumna()] != null;
     }
 }
